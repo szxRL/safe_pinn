@@ -30,7 +30,7 @@ colcon build --merge-install
 . install/setup.bash
 ```
 
-## MAPPO 算法部分
+## 配置MAPPO 算法部分
 
 ```bash
 
@@ -46,9 +46,6 @@ cd on-policy
 python -m pip install -e .
 ```
 
-
-
-
 ## 启动 VRX 并行环境
 
 ```bash
@@ -63,24 +60,6 @@ cd ~/safe_pinn/vrx_ws/src
 # 启动并行环境，默认启动10个进程
 python3 train_parallel.py
 ```
-
-## 可视化查看其中一个训练进程
-
-重新开启一个终端：
-
-```bash
-# 先加载 ROS 本体
-source /opt/ros/jazzy/setup.bash
-
-# 再加载你编译好的工作区
-source ~/safe_pinn/vrx_ws/install/setup.bash
-
-export ROS_DOMAIN_ID=10
-export GZ_PARTITION=vrx_env_0
-
-gz sim -g
-```
-
 
 ## 开启训练算法
 
@@ -100,3 +79,19 @@ chmod +x ./train_vrx_mappo.sh
 ./train_vrx_mappo.sh
 ```
 
+## 如果想可视化查看其中一个训练进程
+
+重新开启一个终端：
+
+```bash
+# 先加载 ROS 本体
+source /opt/ros/jazzy/setup.bash
+
+# 再加载你编译好的工作区
+source ~/safe_pinn/vrx_ws/install/setup.bash
+
+export ROS_DOMAIN_ID=10
+export GZ_PARTITION=vrx_env_0
+
+gz sim -g
+```
