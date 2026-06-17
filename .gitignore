@@ -1,0 +1,31 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python packaging
+*.egg-info/
+build/
+dist/
+
+# ROS/colcon build outputs
+vrx_ws/build/
+vrx_ws/install/
+vrx_ws/log/
+log/
+
+# Training and experiment outputs
+on-policy/onpolicy/scripts/results/
+on-policy/onpolicy/scripts/train/results/
+wandb/
+
+# Local editor and OS files
+.vscode/
+.idea/
+.codex
+.DS_Store
