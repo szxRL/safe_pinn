@@ -35,7 +35,7 @@ pip install -e .
 source /opt/ros/jazzy/setup.bash
 
 # 再加载你编译好的工作区
-source ~/vrx_ws/install/setup.bash
+source ~/safe_pinn/vrx_ws/install/setup.bash
 
 cd safe_pinn/vrx_ws/src
 
@@ -51,7 +51,7 @@ python3 train_parallel.py
 source /opt/ros/jazzy/setup.bash
 
 # 再加载你编译好的工作区
-source ~/vrx_ws/install/setup.bash
+source ~/safe_pinn/vrx_ws/install/setup.bash
 
 export ROS_DOMAIN_ID=10
 export GZ_PARTITION=vrx_env_0
@@ -66,7 +66,7 @@ gz sim -g
 source /opt/ros/jazzy/setup.bash
 
 # 再加载你编译好的工作区
-source ~/vrx_ws/install/setup.bash
+source ~/safe_pinn/vrx_ws/install/setup.bash
 
 cd on-policy/onpolicy/scripts
 
