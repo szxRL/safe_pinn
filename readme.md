@@ -40,7 +40,7 @@ rocker --nvidia runtime --env NVIDIA_VISIBLE_DEVICES=1 --env NVIDIA_DRIVER_CAPAB
 git clone https://github.com/szxRL/safe_pinn.git
 ```
 
-## 编译 VRX 环境
+<!-- ## 编译 VRX 环境
 
 ```bash
 cd ~/safe_pinn/vrx_ws
@@ -56,7 +56,7 @@ source install/setup.bash
 
 ```
 
-更新使用colcon build --symlink-install --packages-select vrx_gz后不使用显存，改而使用内存
+更新使用colcon build --symlink-install --packages-select vrx_gz后不使用显存，改而使用内存 -->
 
 
 ## 配置MAPPO 算法部分
@@ -86,6 +86,18 @@ rocker --nvidia runtime --env NVIDIA_VISIBLE_DEVICES=1 --env NVIDIA_DRIVER_CAPAB
 开启容器
 
 然后运行
+```bash
+cd ~/safe_pinn/vrx_ws
+# 先加载 ROS 本体
+source /opt/ros/jazzy/setup.bash
+
+# 再加载你编译好的工作区
+source ~/safe_pinn/vrx_ws/install/setup.bash
+colcon build --symlink-install --packages-select vrx_gz
+source install/setup.bash
+```
+更新使用colcon build --symlink-install --packages-select vrx_gz后不使用显存，改而使用内存
+
 
 ```bash
 # 先加载 ROS 本体
