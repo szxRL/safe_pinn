@@ -8,8 +8,8 @@ export CUDA_VISIBLE_DEVICES=0
 # ================= 基础配置 =================
 ENV_NAME="VRX_USV"
 ALGO_NAME="mappo"            # rmappo: 带 RNN 记忆的 MAPPO；mappo: 不带 RNN
-# EXP_NAME="vrx_2boats_navigation_old"
-EXP_NAME="vrx_2boats_navigation_safe_pinn"
+EXP_NAME="vrx_2boats_navigation_old"
+# EXP_NAME="vrx_2boats_navigation_safe_pinn"
 SCENARIO_NAME="sydney_regatta"
 
 # ================= 环境参数 =================
@@ -50,7 +50,7 @@ python train/train_vrx_mappo.py \
     --lr ${LR} \
     --critic_lr ${CRITIC_LR} \
     --use_wandb False \
-    --use_pinn
+    # --use_pinn
     
 
 echo "训练运行结束或被手动终止。"
