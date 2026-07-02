@@ -25,7 +25,7 @@ Step 2: Set up Nvidia Container Toolkit
 Step 3: Install Rocker
 这一步可以尝试运行下面命令看一下是否有rocker。
 
-我的docker启动命令如下：
+我的使用rocker的docker启动命令如下：
 
 ```bash
 rocker --nvidia runtime --env NVIDIA_VISIBLE_DEVICES=1 --env NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute --user --home --shm-size 2g ghcr.io/osrf/vrx-devel:latest /bin/bash
