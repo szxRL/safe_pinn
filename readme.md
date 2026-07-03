@@ -153,3 +153,31 @@ export GZ_PARTITION=vrx_env_0
 
 gz sim -g
 ```
+
+## 常见问题
+
+### 找不到 `models/wamv/tmp/model.urdf`
+
+如果启动环境时报类似下面的错误：
+
+```text
+No such file or directory: .../vrx_gazebo/share/vrx_gazebo/models/wamv/tmp/model.urdf
+```
+
+原因通常是旧版 `vrx_gz` 启动逻辑仍然硬编码读取 `models/wamv/tmp/model.urdf`，但本项目会按船名生成：
+
+```text
+models/wamv1/tmp/model.urdf
+models/wamv2/tmp/model.urdf
+```
+
+更新代码后，在容器或目标机器里重新编译并重新加载工作区：
+
+```bash
+cd ~/safe_pinn/vrx_ws
+source /opt/ros/jazzy/setup.bash
+colcon build --symlink-install --packages-select vrx_gz
+source install/setup.bash
+```
+
+如果之前已经启动过 Gazebo/训练环境，先关闭旧进程，再重新运行 `python3 train_parallel.py`。

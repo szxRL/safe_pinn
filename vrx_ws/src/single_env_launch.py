@@ -40,11 +40,13 @@ def generate_launch_description():
         ld.add_action(IncludeLaunchDescription(
             PythonLaunchDescriptionSource(spawn_launch),
             launch_arguments={
+                'world': WORLD_NAME,
+                'sim_mode': 'sim',
+                'bridge_competition_topics': 'false',
                 'name': robot['name'],
                 'x': robot['x'], 'y': robot['y'], 'z': robot['z'],
                 'R': robot['R'], 'P': robot['P'], 'Y': robot['Y'],
                 'spawn_config_file': wamv_config,
-                'bridge': 'false'
             }.items()
         ))
 
